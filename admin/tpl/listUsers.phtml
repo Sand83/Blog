@@ -1,0 +1,30 @@
+<section>
+    <h2>Liste des utilisateurs</h2>
+
+    <table>
+        <thead>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Pseudo</th>
+            <th>Email</th>
+            <th>Mot de passe</th>
+            <th>Biographie</th>
+        </thead>
+        <tbody>
+            <?php foreach($users as $user):?>
+                <tr>
+                    <td><input type="checkbox" name="choix" /><?=$user['user_id']?></td>
+                    <td><?=$user['user_nom']?></td>
+                    <td><?=$user['user_prenom']?></td>
+                    <td><?=$user['user_username']?></td>
+                    <td><?=$user['user_email']?></td>
+                    <td><?=$user['user_password']?></td>
+                    <td><?=$user['user_bio']?></td>
+                </tr>  
+            <?php endforeach;?> 
+        </tbody>
+    </table>
+    <input type="submit" value="Modifier">
+    <input type="submit" value="Supprimer">
+</section>

@@ -1,0 +1,40 @@
+<section>
+    <h2>Formulaire d'inscription</h2>
+<?php if(count($error)>0) :?>
+    <?php foreach($error as $err):?>
+        <p><?=$err?></p>
+    <?php endforeach;?>
+<?php endif;?>
+    <form method="post" action="addUser.php">
+        <p>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder="Votre nom" value=""/>
+        </p>
+        <p>
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" value=""/>
+        </p>
+        <p>
+            <label for="pseudo">Pseudo :</label> 
+            <input type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo" value=""/>
+        </p>
+        <p>
+            <label for="mail">Email :</label>
+            <input type="email" name="mail" id="mail" placeholder="Votre Email" value=""/>
+        </p>        
+        <p>
+            <label for="pass">Mot de passe :</label>
+            <input type="password" name="pass" id="pass" placeholder="Votre mot de passe" value=""/>
+        </p>
+        <p>
+            <label for="pass2">Confirmez votre mot de passe :</label>
+            <input type="password" name="pass2" id="pass2" placeholder="Confirmez votre mot de passe" value=""/>
+        </p>      
+        <p>
+            <label for="bio">Votre biographie</label><br />
+            <textarea name="bio" id="bio" placeholder="Parlez nous de vous"></textarea>
+        </p>
+
+        <input type="submit" value="Envoyer" />
+    </form>
+</section>
