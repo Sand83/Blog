@@ -1,10 +1,10 @@
 <section>
-    <h2>Formulaire d'inscription</h2>
-<?php if(count($error)>0) :?>
-    <?php foreach($error as $err):?>
-        <p><?=$err?></p>
-    <?php endforeach;?>
-<?php endif;?>
+    <h2><?=$title?></h2>
+        <?php if(count($error)>0) :?>
+            <?php foreach($error as $err):?>
+                <p><?=$err?></p>
+            <?php endforeach;?>
+        <?php endif;?>
     <form method="post" action="addUser.php">
         <p>
             <label for="nom">Nom :</label>

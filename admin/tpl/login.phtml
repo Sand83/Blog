@@ -1,6 +1,8 @@
 <section>
-    <h2>Connexion</h2>
-
+    <h2><?=$title?></h2>
+    <?php if($impossible != false) :?>    
+        <p><?=$impossible?></p>
+    <?php endif;?>
     <form method="post" action="login.php">
         <p>
             <label for="mail">Email :</label>

@@ -14,13 +14,24 @@
   <body>
     <header>
         <h1>Chezpas Blog</h1>
+
           <nav>
-            <a href="#">Accueil</a>
-            <a href="#">ChezPas</a>
-            <a href="#">Nous contacter</a>
+            <a href="addUser.php">Ajouter un utilisateur</a>
+            <a href="listUsers.php">Liste des utilisateurs</a>
+            <a href="addArticle.php">Ajouter un article</a>
           </nav>
-          <input type="submit" value="Deconnexion" />
+
+          <form method="post" action="logout.php">
+            <input type="submit" value="Déconnexion" />
+          </form>
+          
+          <?php if(isset($_SESSION['connect']) && $_SESSION['connect'] == true):?>
+            <p>Bonjour,<?=$_SESSION['user'][2]?> <?=$_SESSION['user'][1]?></p>
+          <?php else:?>
+            <p>Veuillez vous connecter</p>
+          <?php endif;?>
     </header>
+
     <main>
       <?php include('tpl/'.$vue);?>
     </main>

@@ -1,0 +1,37 @@
+<section>
+    <h2><?=$title?></h2>
+        <?php if(count($error)>0) :?>
+            <?php foreach($error as $err):?>
+                <p><?=$err?></p>
+            <?php endforeach;?>
+        <?php endif;?>
+    <form method="post" enctype="multipart/form-data" action="addArticle.php">
+        <p>
+            Catégorie de l'article :<br />
+            <input type="checkbox" name="humour" id="humour" /> <label for="humour">Humour</label><br />
+            <input type="checkbox" name="chiens" id="chiens" /> <label for="chiens">Chiens</label><br />
+            <input type="checkbox" name="chats" id="chats" /> <label for="chats">Chats</label><br />
+        </p>
+        <p>
+            <label for="titre">Titre :</label>
+            <input type="text" name="titre" id="titre" placeholder="Titre de l'article" value=""/>
+        </p>
+        <p>
+            <label for="contenu">Contenu de l'article</label><br />
+            <textarea name="contenu" id="contenu" placeholder="Contenu de l'article"></textarea>
+        </p>
+        <p>
+            <label for="tags">Tags :</label>
+            <input type="text" name="tags" id="tags" placeholder="Place aux tags" value=""/>
+        </p>
+        <p>
+            <label for="photo">Ajouter un fichier :</label><br />
+            <input type="file" name="photo" id="photo" />
+        </p>
+        <p>
+            <label for="date">Date de publication</label><br />
+            <input type="date" name="date" id="date"/><br />
+        </p>
+        <input type="submit" value="Envoyer" />
+    </form>
+</section>

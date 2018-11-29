@@ -1,10 +1,12 @@
 <?php
+session_start();
 include('../config/config.php');
 include('../lib/bdd.lib.php');
 
+userIsConnected();
 
 $vue='listUsers.phtml';
-$title = 'Liste des utilisataurs';
+$title = 'Liste des utilisateurs';
 //$activeMenu='clients';
 
 try
