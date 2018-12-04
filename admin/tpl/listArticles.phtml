@@ -1,0 +1,32 @@
+<section>
+    <h2><?=$title?></h2>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Id auteur</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Date de publication</th>
+            <th>Image</th>
+            <th>Tags</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </thead>
+        <tbody>
+            <?php foreach($articles as $article):?>
+                <tr>
+                    <td><?=$article['art_id']?></td>
+                    <td><?=$article['art_fk_user_id']?></td>
+                    <td><?=$article['art_title']?></td>
+                    <td><?=$article['art_content']?></td>
+                    <td><?=$article['art_date_publi']?></td>
+                    <td><?=$article['art_picture']?></td>
+                    <td><?=$article['art_tags']?></td>
+                    <td><input type="submit" value="Modifier"></td>
+                    <td><input type="submit" value="Supprimer"></td>
+                </tr>  
+            <?php endforeach;?> 
+        </tbody>
+    </table>
+
+</section>

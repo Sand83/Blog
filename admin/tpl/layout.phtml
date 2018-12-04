@@ -19,6 +19,8 @@
             <a href="addUser.php">Ajouter un utilisateur</a>
             <a href="listUsers.php">Liste des utilisateurs</a>
             <a href="addArticle.php">Ajouter un article</a>
+            <a href="listArticles.php">Liste des articles</a>
+            <a href="categories.php">Catégories</a>
           </nav>
 
           <form method="post" action="logout.php">
@@ -26,7 +28,7 @@
           </form>
           
           <?php if(isset($_SESSION['connect']) && $_SESSION['connect'] == true):?>
-            <p>Bonjour,<?=$_SESSION['user'][2]?> <?=$_SESSION['user'][1]?></p>
+            <p>Bonjour, <?=$_SESSION['user'][2]?> <?=$_SESSION['user'][1]?></p>
           <?php else:?>
             <p>Veuillez vous connecter</p>
           <?php endif;?>

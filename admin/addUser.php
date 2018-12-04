@@ -57,24 +57,16 @@ try
         if(empty($error)){
             $dbh = connexion();
 
-            /**2 : Prépare ma requête SQL */
             $sth = $dbh->prepare('INSERT INTO blog_user (user_id, user_nom, user_prenom, user_username, user_email, user_password, user_bio ) 
             VALUES (NULL, :user_nom, :user_prenom, :user_username, :user_email, :user_password, :user_bio);');
         
-            /** 3 : executer la requête */
             $sth->execute($recup);
         }
-
     }
-
 }
 catch(PDOException $e)
 {
-    //$vue = 'erreur.phtml';
-    //Si une exception est envoyée par PDO (exemple : serveur de BDD innaccessible) on arrive ici
     $error[]= 'Une erreur de connexion a eu lieu :'.$e->getMessage();
 }
-
-
 
 include('tpl/layout.phtml');

@@ -7,10 +7,15 @@
         <?php endif;?>
     <form method="post" enctype="multipart/form-data" action="addArticle.php">
         <p>
-            Catégorie de l'article :<br />
-            <input type="checkbox" name="humour" id="humour" /> <label for="humour">Humour</label><br />
-            <input type="checkbox" name="chiens" id="chiens" /> <label for="chiens">Chiens</label><br />
-            <input type="checkbox" name="chats" id="chats" /> <label for="chats">Chats</label><br />
+
+        <label for="cat">Catégorie de l'article</label><br />
+            <select name="cat" id="cat">
+                <?php if(count($categories)>0) :?>
+                    <?php foreach($categories as $categorie):?>
+                        <option value="<?=$categorie['cat_id']?>"><?=$categorie['cat_name']?></option>
+                    <?php endforeach;?>
+                <?php endif;?>  
+            </select>         
         </p>
         <p>
             <label for="titre">Titre :</label>
